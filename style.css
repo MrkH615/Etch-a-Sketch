@@ -1,0 +1,15 @@
+h1 {
+    margin: auto;
+    width:  50%;
+    font-size: 2rem;
+}
+
+div {
+    width: 100px;
+    height: 100px;
+}
+
+#container {
+    width: auto;
+    height:  auto;
+}
