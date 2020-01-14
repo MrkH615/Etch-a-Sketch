@@ -1,9 +1,10 @@
 const container = document.querySelector('#container');
-//const squareDiv = document.createElement('div');
+let rows = 16;
+let columns = 16;
+let gridArea = rows * columns;
 
-//squareDiv.style.cssText = 'background: blue; border-style: solid; border-color: red; border-width: 3px';
-//squareDiv.classList.add('squareDiv');
-for (i=0; i < 16; i++) {
+
+for (let i=0; i < gridArea; i++) {
   const squareDiv = document.createElement('div');
   squareDiv.style.cssText = 'background: blue; border-style: solid; border-color: red; border-width: 3px';
 squareDiv.classList.add('squareDiv');
