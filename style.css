@@ -11,10 +11,10 @@ h1 {
 
 #container {
     width: auto;
-    /*height:  auto;*/
+    height:  auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+   /* grid-template-rows: repeat(16, 1fr);
+    grid-template-columns: repeat(16, 1fr); */
 }
 
 
