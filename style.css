@@ -17,11 +17,6 @@ h1 {
     grid-template-columns: repeat(16, 1fr); */
 }
 
-
-.squareDiv {
-    
-}
-
 .coloredBox {
     background-color: blueviolet;
 }
