@@ -47,7 +47,7 @@ newSquares.addEventListener('click', () => {
   squaresPerSide = prompt(`How many squares do you want on each side? \nCurrently set at ${squaresPerSide} on each side.  `);
   clearDrawingArea();
   defineDrawingArea(squaresPerSide);
-  console.log(`Now ${squaresPerSide} squares`);  //whole screen is purple if already drawn on
+  console.log(`Now ${squaresPerSide} squares`);  
   gridArea = squaresPerSide * squaresPerSide;
   console.log(`Now grid area is ${gridArea}`);
   makeDrawingArea(gridArea);

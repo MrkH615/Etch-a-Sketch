@@ -5,13 +5,17 @@ h1 {
 }
 
 .squareDiv {
-    width: 100px;
-    height: 100px;
+    width: auto;
+    height: auto;
 }
 
 #container {
-    width: auto;
-    height:  auto;
+    border-style: inset;
+    border-width: 10px;
+    width: 960px;
+    height:  960px;
+    /* width: auto;
+    height: auto; */
     display: grid;
    /* grid-template-rows: repeat(16, 1fr);
     grid-template-columns: repeat(16, 1fr); */
@@ -19,4 +23,5 @@ h1 {
 
 .coloredBox {
     background-color: blueviolet;
+    border-block-style: none;
 }
