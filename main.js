@@ -29,6 +29,11 @@ function makeDrawingArea(gridArea)  {
   }
 }
 
+function clearDrawingArea(){
+  container.innerHTML = '';
+  console.log(`clear drawing area ${squaresPerSide} squares, ${gridArea} area`);
+}
+
 makeDrawingArea(gridArea);
 
 container.addEventListener('mouseover', (event) => {  //works with horizontal and vertical movements, not always of page resized
@@ -39,9 +44,10 @@ container.addEventListener('mouseover', (event) => {  //works with horizontal an
 
 let newSquares = document.querySelector("#newSquares");
 newSquares.addEventListener('click', () => {
-  prompt(`How many squares do you want on each side? \nCurrently set at ${squaresPerSide} on each side.  `, squaresPerSide);
+  squaresPerSide = prompt(`How many squares do you want on each side? \nCurrently set at ${squaresPerSide} on each side.  `);
+  clearDrawingArea();
   defineDrawingArea(squaresPerSide);
-  console.log(`Now ${squaresPerSide} squares`);  //still initial value
+  console.log(`Now ${squaresPerSide} squares`);  //whole screen is purple if already drawn on
   gridArea = squaresPerSide * squaresPerSide;
   console.log(`Now grid area is ${gridArea}`);
   makeDrawingArea(gridArea);
