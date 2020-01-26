@@ -14,10 +14,9 @@ for (let i=0; i < gridArea; i++) {
 }
 
 
-
 container.addEventListener('mouseover', (event) => {  //works with horizontal and vertical movements, not always of page resized
   console.log(event.target.id);
-  console.log(event.target.id);
+  console.log(event.target);
   event.target.classList.add('coloredBox');
 });
 

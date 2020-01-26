@@ -1,18 +1,51 @@
 const container = document.querySelector('#container');
+/*
 let rows = 16;
 let columns = 16;
 let gridArea = rows * columns;
 
 container.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
 container.style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
+*/
 
-for (let i=0; i < gridArea; i++) {
-  const squareDiv = document.createElement('div');
-  //squareDiv.style.cssText = `background: blue; border-style: solid; border-color: red; border-width: 3px`;
-  squareDiv.classList.add('squareDiv');
-  container.appendChild(squareDiv);
-  squareDiv.setAttribute('id',`cell${i}`);
+let squaresPerSide = 16;
+let gridArea = squaresPerSide * squaresPerSide;
+
+function defineDrawingArea(squaresPerSide){
+  // gridArea = squaresPerSide * squaresPerSide;
+  container.style.gridTemplateRows = `repeat(${squaresPerSide}, 1fr)`;
+  container.style.gridTemplateColumns = `repeat(${squaresPerSide}, 1fr)`;
 }
+
+defineDrawingArea(squaresPerSide);
+
+function makeDrawingArea(gridArea)  {
+  for (let i=0; i < gridArea; i++) {
+    const squareDiv = document.createElement('div');
+  //squareDiv.style.cssText = `background: blue; border-style: solid; border-color: red; border-width: 3px`;
+    squareDiv.classList.add('squareDiv');
+    container.appendChild(squareDiv);
+    squareDiv.setAttribute('id',`cell${i}`);
+  }
+}
+
+makeDrawingArea(gridArea);
+
+container.addEventListener('mouseover', (event) => {  //works with horizontal and vertical movements, not always of page resized
+  console.log(event.target.id);
+  console.log(event.target);
+  event.target.classList.add('coloredBox');
+});
+
+let newSquares = document.querySelector("#newSquares");
+newSquares.addEventListener('click', () => {
+  prompt(`How many squares do you want on each side? \nCurrently set at ${squaresPerSide} on each side.  `, squaresPerSide);
+  defineDrawingArea(squaresPerSide);
+  console.log(`Now ${squaresPerSide} squares`);  //still initial value
+  gridArea = squaresPerSide * squaresPerSide;
+  console.log(`Now grid area is ${gridArea}`);
+  makeDrawingArea(gridArea);
+});
 
 /* container.style.gridTemplateRows = repeat(${rows}, 1fr);  
  container.style.gridTemplateColumns = repeat(${columns}, 1fr);  */
@@ -38,11 +71,7 @@ document.getElementById('container').addEventListener('mouseover', (event) => {
 }) ;
 */
 
-container.addEventListener('mouseover', (event) => {  //works with horizontal and vertical movements, not always of page resized
-  console.log(event.target.id);
-  console.log(event.target.id);
-  event.target.classList.add('coloredBox');
-});
+
 
 
 /*
