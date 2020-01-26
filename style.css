@@ -1,3 +1,13 @@
+button {
+    margin: 5px;
+    width: 8rem;
+    height:  2rem;
+    border-radius: 2rem;
+    border-style: solid;
+    font-size: 1rem;
+    
+}
+
 h1 {
     margin: auto;
     width:  50%;
@@ -7,13 +17,16 @@ h1 {
 .squareDiv {
     width: auto;
     height: auto;
+    margin: 0px;
+    padding: 0px;
 }
 
 #container {
+    margin: auto;
     border-style: inset;
     border-width: 10px;
-    width: 960px;
-    height:  960px;
+    width: 750px;
+    height:  750px;
     /* width: auto;
     height: auto; */
     display: grid;
