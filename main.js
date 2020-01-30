@@ -1,4 +1,5 @@
 const container = document.querySelector('#container');
+
 /*
 let rows = 16;
 let columns = 16;
@@ -35,12 +36,24 @@ function clearDrawingArea(){  //spaces between drawn sqares if small number of s
 }
 
 makeDrawingArea(gridArea);
+const allSquareDivs = document.querySelectorAll('.squareDiv');
 
-container.addEventListener('mouseover', (event) => {  //works with horizontal and vertical movements, not always of page resized
+allSquareDivs.forEach((div) => {
+  div.addEventListener('mouseover', (event) => {
+    console.log(event.target.id);
+    console.log(event.target);
+    event.target.classList.add('coloredBox');
+  });
+});
+
+/*
+container.addEventListener('mouseover', (event) => {  //container EventListener colors individual boxes when starting inside container, otherwise colors whole container
+  //squareDiv EventListener doesn't work and Start again button doesn't either
   console.log(event.target.id);
   console.log(event.target);
-  event.target.classList.add('coloredBox');
+  event.target.classList.add('coloredBox');  
 });
+*/
 
 let newSquares = document.querySelector("#newSquares");
 newSquares.addEventListener('click', () => {
