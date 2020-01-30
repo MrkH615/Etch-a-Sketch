@@ -36,17 +36,23 @@ function clearDrawingArea(){  //spaces between drawn sqares if small number of s
 }
 
 makeDrawingArea(gridArea);
-const allSquareDivs = document.querySelectorAll('.squareDiv');
+//const allSquareDivs = document.querySelectorAll('.squareDiv');
 
-allSquareDivs.forEach((div) => {
-  div.addEventListener('mouseover', (event) => {
-    console.log(event.target.id);
-    console.log(event.target);
-    event.target.classList.add('coloredBox');
+function draw() {
+  const allSquareDivs = document.querySelectorAll('.squareDiv');
+  allSquareDivs.forEach((div) => {
+    div.addEventListener('mouseover', (event) => {
+      console.log(event.target.id);
+      console.log(event.target);
+      event.target.classList.add('coloredBox');
+    });
   });
-});
+}
 
-/*
+draw();
+
+
+/*  works after Start again button clicked
 container.addEventListener('mouseover', (event) => {  //container EventListener colors individual boxes when starting inside container, otherwise colors whole container
   //squareDiv EventListener doesn't work and Start again button doesn't either
   console.log(event.target.id);
@@ -64,6 +70,7 @@ newSquares.addEventListener('click', () => {
   gridArea = squaresPerSide * squaresPerSide;
   console.log(`Now grid area is ${gridArea}`);
   makeDrawingArea(gridArea);
+  draw();
 });
 
 /* container.style.gridTemplateRows = repeat(${rows}, 1fr);  
