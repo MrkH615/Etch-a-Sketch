@@ -1,14 +1,5 @@
 const container = document.querySelector('#container');
 
-/*
-let rows = 16;
-let columns = 16;
-let gridArea = rows * columns;
-
-container.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
-container.style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
-*/
-
 let squaresPerSide = 16;
 let gridArea = squaresPerSide * squaresPerSide;
 
@@ -29,14 +20,14 @@ function makeDrawingArea(gridArea)  {
   }
 }
 
-function clearDrawingArea(){  //spaces between drawn sqares if small number of squares
+function clearDrawingArea(){  
   container.innerHTML = '';
   container.style.backgroundColor = 'white';
   console.log(`clear drawing area ${squaresPerSide} squares, ${gridArea} area`);
 }
 
 makeDrawingArea(gridArea);
-//const allSquareDivs = document.querySelectorAll('.squareDiv');
+
 
 function draw() {
   const allSquareDivs = document.querySelectorAll('.squareDiv');
@@ -45,12 +36,17 @@ function draw() {
       console.log(event.target.id);
       console.log(event.target);
       event.target.classList.add('coloredBox');
+      //event.target.style.cssText = `background-color:${chooseRandomColor()}`;
+
     });
   });
 }
 
-draw();
+function chooseRandomColor() {
+  return `hsla(${(Math.random() * 360)}, 100%, 50%, 1)`;
+}
 
+draw();
 
 /*  works after Start again button clicked
 container.addEventListener('mouseover', (event) => {  //container EventListener colors individual boxes when starting inside container, otherwise colors whole container
@@ -73,44 +69,8 @@ newSquares.addEventListener('click', () => {
   draw();
 });
 
-/* container.style.gridTemplateRows = repeat(${rows}, 1fr);  
- container.style.gridTemplateColumns = repeat(${columns}, 1fr);  */
-
-
- /*
-for (let i=0; i < gridArea; i++) {
-  const squareDiv = document.createElement('div');
-  //squareDiv.style.cssText = `background: blue; border-style: solid; border-color: red; border-width: 3px`;
-  squareDiv.classList.add('squareDiv');
-  container.appendChild(squareDiv);
-  squareDiv.setAttribute('id',`cell${i}`);
- // squareDiv.textContent = `box ${i}`;
-}
-*/
-
-/*
-document.getElementById('container').addEventListener('mouseover', (event) => {
-  //let coloredBox = event.target.id;
-  console.log(event.target.id);
-  event.target.id.backgroundColor = 'red';  //no color change
-  //event.target.id.classList.add('coloredBox');
-}) ;
-*/
 
 
 
 
-/*
-let draw = document.querySelectorAll('.squareDiv'); //querySelectorAll TypeError: draw.addEventListener is not a function
-container.addEventListener('mouseover', e => {  //mouseover and mouseenter trigger event only once with draw, with container draw.style is undefined
-  //works only on squareDiv 0
-  console.log("Hovered");  //displays message only once with event listener on draw, each time on container
-  draw.forEach(function(e) {
-    draw.style.backgroundColor = 'purple';
-  });
-  //draw.style.backgroundColor = 'purple'; //adds only once
-  //document.getElementsByClassName('squareDiv').style.backgroundColor = 'purple';  //squareDiv not defined
-  //TypeError: document.getElementsByClassName(...).style is undefined
-});
 
-*/
