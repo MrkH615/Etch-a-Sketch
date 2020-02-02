@@ -28,22 +28,25 @@ function clearDrawingArea(){
 
 makeDrawingArea(gridArea);
 
+let lightness = 100;
 
-function draw() {
+function draw() {  //with lightness as arg, first undefined, then NaN
   const allSquareDivs = document.querySelectorAll('.squareDiv');
   allSquareDivs.forEach((div) => {
-    div.addEventListener('mouseover', (event) => {
+    div.addEventListener('mouseenter', (event) => {
       console.log(event.target.id);
       console.log(event.target);
-      event.target.classList.add('coloredBox');
-      //event.target.style.cssText = `background-color:${chooseRandomColor()}`;
-
+      console.log(lightness);
+      //event.target.classList.add('coloredBox');
+      event.target.style.cssText = `background-color:${chooseRandomColor(lightness)}`;
+      lightness -=10;  //decrements with mouseover or mouseover anywhere in container
     });
   });
 }
 
-function chooseRandomColor() {
-  return `hsla(${(Math.random() * 360)}, 100%, 50%, 1)`;
+function chooseRandomColor(lightness) {
+  //lightness -=10;  //doesn't change lightness in draw()
+  return `hsla(${(Math.random() * 360)}, 100%, ${lightness}%, 1)`;
 }
 
 draw();
