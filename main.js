@@ -34,7 +34,7 @@ makeDrawingArea(gridArea);
 let lightness = new Array(gridArea).fill(100);
 */
 
-let lightnessCounter = new Array(gridArea).fill(100);
+let lightnessCounter = new Array(gridArea).fill(90);
 
 function draw(...lightnessCounter) {  //with lightness as arg,darkens on pass thru any div in container
   const allSquareDivs = document.querySelectorAll('.squareDiv');
@@ -84,7 +84,7 @@ newSquares.addEventListener('click', () => {
   gridArea = squaresPerSide * squaresPerSide;
   console.log(`Now grid area is ${gridArea}`);
   makeDrawingArea(gridArea);
-  draw();
+  draw(...lightnessCounter);
 });
 
 
