@@ -82,6 +82,7 @@ newSquares.addEventListener('click', () => {
   defineDrawingArea(squaresPerSide);
   console.log(`Now ${squaresPerSide} squares`);  
   gridArea = squaresPerSide * squaresPerSide;
+  lightnessCounter = new Array(gridArea).fill(90);
   console.log(`Now grid area is ${gridArea}`);
   makeDrawingArea(gridArea);
   draw(...lightnessCounter);
