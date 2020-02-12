@@ -1,3 +1,8 @@
+
+body{
+    background-color: #ebfeff;
+}
+
 button {
     margin: 5px;
     width: 8rem;
@@ -21,40 +26,39 @@ h1 {
 }
 
 
-
-
-/*
 #instructions {
     padding: .5rem;
     margin:  auto;
-    width: 25%;
+    width: 40%;
+    font-size: 1.5rem;
+}
+
+/*
+p {
+    display: inline-block;
 }
 */
 
 .squareDiv {
     width: auto;
-    height: auto;
+    height: auto; 
     margin: 0px;
     padding: 0px;
     /*border-block-style: none;*/
 }
-
 #container {
     margin: auto;
     border-style: inset;
-    border-width: 10px;
-    width: 750px;
-    height:  650px;
+    border-width: .625rem;
+    width: 47rem;
+    /*width: 46.875rem;*/
+    /*width: 750px;*/
+    height: 40.625rem;
+    /*height:  650px;*/
     /* width: auto;
     height: auto; */
     display: grid;
    
-}
-
-#instructions {
-    padding: .5rem;
-    margin:  auto;
-    
 }
 
 .coloredBox {
