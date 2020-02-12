@@ -40,7 +40,7 @@ function draw(...lightnessCounter) {  //with lightness as arg,darkens on pass th
   const allSquareDivs = document.querySelectorAll('.squareDiv');
   allSquareDivs.forEach((div) => {
     //lightness -=10; //after 1st event lightness =-2460
-    div.addEventListener('mouseenter', (event) => {
+    div.addEventListener('mouseover', (event) => {
       console.log("event.target.id " + event.target.id);  //div id, ex cell5
       console.log(event.target);
       let squareDivNumber = event.target.id.toString().match(/\d+/g);
@@ -78,6 +78,12 @@ container.addEventListener('mouseover', (event) => {  //container EventListener 
 let newSquares = document.querySelector("#newSquares");
 newSquares.addEventListener('click', () => {
   squaresPerSide = prompt(`How many squares do you want on each side? \nCurrently set at ${squaresPerSide} on each side.  `);
+  //checkInput(squaresPerSide);
+  while (Number.isNaN(Number(squaresPerSide))) {
+    squaresPerSide = prompt(`Please enter a number.  \nHow many squares do you want on each side? `);
+  }
+  squaresPerSide = Math.abs(Math.round(squaresPerSide));
+  console.log(`after input checked, ${squaresPerSide} squares`);
   clearDrawingArea();
   defineDrawingArea(squaresPerSide);
   console.log(`Now ${squaresPerSide} squares`);  

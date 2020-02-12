@@ -11,7 +11,7 @@ button {
 
 #buttonContainer {
   margin: auto;
-  width: 35%;
+  width: 15%;
 }
 
 h1 {
@@ -19,6 +19,17 @@ h1 {
     width:  25%;
     font-size: 2rem;
 }
+
+
+
+
+/*
+#instructions {
+    padding: .5rem;
+    margin:  auto;
+    width: 25%;
+}
+*/
 
 .squareDiv {
     width: auto;
@@ -38,6 +49,12 @@ h1 {
     height: auto; */
     display: grid;
    
+}
+
+#instructions {
+    padding: .5rem;
+    margin:  auto;
+    
 }
 
 .coloredBox {
