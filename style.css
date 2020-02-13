@@ -37,17 +37,14 @@ h1 {
     height: auto; 
     margin: 0px;
     padding: 0px;
-    /*border-block-style: none;*/
+    
 }
 #container {
     margin: auto;
     border-style: inset;
     border-width: .625rem;
     width: 47rem;
-    /*width: 46.875rem;*/
-    /*width: 750px;*/
     height: 40.625rem;
-    /*height:  650px;*/
     display: grid;
    
 }

@@ -4,7 +4,7 @@ let squaresPerSide = 16;
 let gridArea = squaresPerSide * squaresPerSide;
 
 function defineDrawingArea(squaresPerSide){
-  // gridArea = squaresPerSide * squaresPerSide;
+  
   container.style.gridTemplateRows = `repeat(${squaresPerSide}, 1fr)`;
   container.style.gridTemplateColumns = `repeat(${squaresPerSide}, 1fr)`;
 }
@@ -23,42 +23,23 @@ function makeDrawingArea(gridArea)  {
 function clearDrawingArea(){  
   container.innerHTML = '';
   container.style.backgroundColor = 'white';
-  console.log(`clear drawing area ${squaresPerSide} squares, ${gridArea} area`);
 }
 
 makeDrawingArea(gridArea);
 
-//let lightness = 100;
-/*
-
-let lightness = new Array(gridArea).fill(100);
-*/
-
 let lightnessCounter = new Array(gridArea).fill(90);
 
-function draw(...lightnessCounter) {  //with lightness as arg,darkens on pass thru any div in container
+function draw(...lightnessCounter) {  
   const allSquareDivs = document.querySelectorAll('.squareDiv');
   allSquareDivs.forEach((div) => {
-    //lightness -=10; //after 1st event lightness =-2460
     div.addEventListener('mouseover', (event) => {
-      console.log("event.target.id " + event.target.id);  //div id, ex cell5
-      console.log(event.target);
       let squareDivNumber = event.target.id.toString().match(/\d+/g);
-      //console.log(lightness);
-      //event.target.classList.add('coloredBox');
       event.target.style.cssText = `background-color: ${chooseRandomColor(squareDivNumber, ...lightnessCounter)}`;
-      //event.target.style.cssText = `background-color:${chooseRandomColor(lightness)}`;
       lightnessCounter[squareDivNumber] -=10
-      //lightness -=10;  //decrements with mouseover or mouseover anywhere in container
     });
   });
 }
-/*
-function chooseRandomColor(lightness) {
-  //lightness -=10;  //doesn't change lightness in draw()
-  return `hsla(${(Math.random() * 360)}, 100%, ${lightness}%, 1)`;
-}
-*/
+
 
 function chooseRandomColor(squareDivNumber,...lightnessCounter) {
   return `hsla(${(Math.random() * 360)}, 100%, ${lightnessCounter[squareDivNumber]}%, 1)`;
@@ -66,30 +47,17 @@ function chooseRandomColor(squareDivNumber,...lightnessCounter) {
 
 draw(...lightnessCounter);
 
-/*  works after Start again button clicked
-container.addEventListener('mouseover', (event) => {  //container EventListener colors individual boxes when starting inside container, otherwise colors whole container
-  //squareDiv EventListener doesn't work and Start again button doesn't either
-  console.log(event.target.id);
-  console.log(event.target);
-  event.target.classList.add('coloredBox');  
-});
-*/
-
 let newSquares = document.querySelector("#newSquares");
 newSquares.addEventListener('click', () => {
   squaresPerSide = prompt(`How many squares do you want on each side? \nCurrently set at ${squaresPerSide} on each side.  `);
-  //checkInput(squaresPerSide);
   while (Number.isNaN(Number(squaresPerSide))) {
     squaresPerSide = prompt(`Please enter a number.  \nHow many squares do you want on each side? `);
   }
   squaresPerSide = Math.abs(Math.round(squaresPerSide));
-  console.log(`after input checked, ${squaresPerSide} squares`);
   clearDrawingArea();
-  defineDrawingArea(squaresPerSide);
-  console.log(`Now ${squaresPerSide} squares`);  
+  defineDrawingArea(squaresPerSide);  
   gridArea = squaresPerSide * squaresPerSide;
   lightnessCounter = new Array(gridArea).fill(90);
-  console.log(`Now grid area is ${gridArea}`);
   makeDrawingArea(gridArea);
   draw(...lightnessCounter);
 });
