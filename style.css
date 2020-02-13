@@ -10,9 +10,7 @@ button {
     border-radius: 2rem;
     border-style: solid;
     font-size: 1rem;
-    
 }
-
 
 #buttonContainer {
   margin: auto;
@@ -29,15 +27,10 @@ h1 {
 #instructions {
     padding: .5rem;
     margin:  auto;
-    width: 40%;
+    width: 35%;
     font-size: 1.5rem;
 }
 
-/*
-p {
-    display: inline-block;
-}
-*/
 
 .squareDiv {
     width: auto;
@@ -55,8 +48,6 @@ p {
     /*width: 750px;*/
     height: 40.625rem;
     /*height:  650px;*/
-    /* width: auto;
-    height: auto; */
     display: grid;
    
 }
