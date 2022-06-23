@@ -1,7 +1,9 @@
 const container = document.querySelector('#container');
 
-let squaresPerSide = 16;
-let gridArea = squaresPerSide * squaresPerSide;
+function setSize() {
+  let squaresPerSide = 16;
+  return squaresPerSide ** 2;
+}
 
 function defineDrawingArea(squaresPerSide){
   
@@ -9,7 +11,7 @@ function defineDrawingArea(squaresPerSide){
   container.style.gridTemplateColumns = `repeat(${squaresPerSide}, 1fr)`;
 }
 
-defineDrawingArea(squaresPerSide);
+defineDrawingArea(squaresPerSide=16);
 
 function makeDrawingArea(gridArea)  {
   for (let i=0; i < gridArea; i++) {
@@ -25,12 +27,17 @@ function clearDrawingArea(){
   container.style.backgroundColor = 'white';
 }
 
-makeDrawingArea(gridArea);
+makeDrawingArea(gridArea=256);
 
-let lightnessCounter = new Array(gridArea).fill(90);
+//let lightnessCounter = new Array(gridArea).fill(90);
 
-function draw(...lightnessCounter) {  
+function makeLightnessCounter(gridArea) {
+   return new Array(gridArea).fill(90);
+}
+
+function draw(gridArea) {  
   const allSquareDivs = document.querySelectorAll('.squareDiv');
+  let lightnessCounter = makeLightnessCounter(gridArea);
   allSquareDivs.forEach((div) => {
     div.addEventListener('mouseover', (event) => {
       let squareDivNumber = event.target.id.toString().match(/\d+/g);
@@ -45,7 +52,7 @@ function chooseRandomColor(squareDivNumber,...lightnessCounter) {
   return `hsla(${(Math.random() * 360)}, 100%, ${lightnessCounter[squareDivNumber]}%, 1)`;
 }
 
-draw(...lightnessCounter);
+draw(gridArea=256);
 
 let newSquares = document.querySelector("#newSquares");
 newSquares.addEventListener('click', () => {
