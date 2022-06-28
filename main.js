@@ -1,3 +1,5 @@
+"use strict";
+
 const container = document.querySelector('#container');
 
 function setSize() {
@@ -59,7 +61,7 @@ function draw(gridArea, squaresPerSide) {
       lightnessCounter[squareDivNumber] -=10
     });
   });
-  //newDraw(squaresPerSide); constantly called
+
   const newSquares = document.querySelector("#newSquares");
   newSquares.addEventListener('click', newDraw); //not cleared
   /*newSquares.addEventListener('click', () => {
@@ -103,8 +105,8 @@ function newDraw(squaresPerSide){
     clearDrawingArea();
     console.log('back in newDraw()'); //back before "start again" clicked
     defineDrawingArea(squaresPerSide);
-    gridArea = squaresPerSide ** 2;
-    lightnessCounter = new Array(gridArea).fill(90);
+    let gridArea = squaresPerSide ** 2;
+    let lightnessCounter = new Array(gridArea).fill(90);
     makeDrawingArea(gridArea);
     draw(gridArea, squaresPerSide);
 
