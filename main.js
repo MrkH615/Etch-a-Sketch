@@ -1,6 +1,6 @@
 "use strict";
 
-const container = document.querySelector('#container');
+const drawingBox = document.querySelector('#drawing-box');
 
 function setSize() {
   let squaresPerSide = 16;
@@ -21,8 +21,8 @@ function drawFirst() {
 
 function defineDrawingArea(squaresPerSide){
   
-  container.style.gridTemplateRows = `repeat(${squaresPerSide}, 1fr)`;
-  container.style.gridTemplateColumns = `repeat(${squaresPerSide}, 1fr)`;
+  drawingBox.style.gridTemplateRows = `repeat(${squaresPerSide}, 1fr)`;
+  drawingBox.style.gridTemplateColumns = `repeat(${squaresPerSide}, 1fr)`;
 }
 
 //defineDrawingArea();
@@ -31,16 +31,17 @@ function makeDrawingArea(gridArea)  {
   for (let i=0; i < gridArea; i++) {
     const squareDiv = document.createElement('div');
     squareDiv.classList.add('squareDiv');
-    container.appendChild(squareDiv);
+    drawingBox.appendChild(squareDiv);
     squareDiv.setAttribute('id',`cell${i}`);
   }
 }
 
 function clearDrawingArea(){  
   console.log('inside clearDrawingArea()');
-  container.textContent = '';
-  //container.style.color = '#ebfeff';
-  container.style.backgroundColor = 'white';
+  drawingBox.textContent = '';
+  //drawingBox.style.color = '#ebfeff';
+  //drawingBox.style.backgroundColor = 'white';
+  drawingBox.style.backgroundColor = '#ebfeff';
 }
 
 //makeDrawingArea(gridArea=256);
@@ -93,8 +94,12 @@ function newDraw(squaresPerSide){
       squaresPerSide = prompt(`Please enter a number.  \nHow many squares do you want on each side? `);
     } 
     squaresPerSide = Math.abs(Math.round(squaresPerSide)); */
-    
-    squaresPerSide = prompt(`How many squares do you want on each side? \nCurrently set at ${squaresPerSide} on each side.  `);
+    let prevSquaresPerSide = squaresPerSide;
+    console.log(prevSquaresPerSide); /* click { target: button#newSquares, 
+    buttons: 0, clientX: 671, clientY: 89, layerX: 671, layerY: 105 } */
+    squaresPerSide = prompt(`How many squares do you want on each side? \n
+    Currently set at ${prevSquaresPerSide} on each side.  `);
+    // in prompt "Currently set at [object MouseEvent] on each side."
     while (Number.isNaN(Number(squaresPerSide))) {
       squaresPerSide = prompt(`Please enter a number.  \nHow many squares do you want on each side? `);
     } 

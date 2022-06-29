@@ -1,10 +1,25 @@
 
-body{
+body {
     background-color: #ebfeff;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    overflow: hidden;
+    height: 90vh; */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    overflow: hidden;
+    height: 95vh;
 }
 
 button {
-    margin: 5px;
+   margin: 0.3rem;
     width: 8rem;
     height:  2rem;
     border-radius: 2rem;
@@ -12,22 +27,25 @@ button {
     font-size: 1rem;
 }
 
+/*
 #buttonContainer {
   margin: auto;
   width: 15%;
 }
+*/
 
 h1 {
-    margin: auto;
-    width:  25%;
+    /*margin: auto;
+    width:  25%;*/
+    margin-top: 1rem;
     font-size: 2rem;
 }
 
 
 #instructions {
     padding: .5rem;
-    margin:  auto;
-    width: 35%;
+    /*margin:  auto;
+    width: 35%;*/
     font-size: 1.5rem;
 }
 
@@ -39,8 +57,9 @@ h1 {
     padding: 0px;
     
 }
-#container {
-    margin: auto;
+#drawing-box {
+   /* margin: auto;*/
+   margin-top: 1rem;
     border-style: inset;
     border-width: .625rem;
     width: 47rem;
