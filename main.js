@@ -79,9 +79,10 @@ function newDraw(){
 
     let squaresPerSide = prompt(`How many squares do you want on each side? 
   Please enter an integer between 2 and 100.`);
-
-    while (Number.isNaN(Number(squaresPerSide))) {
-      squaresPerSide = prompt(`Please enter a number.  \nHow many squares do you want on each side? `);
+    while (Number.isNaN(Number(squaresPerSide)) || squaresPerSide < 2 
+      || squaresPerSide > 100) {
+      squaresPerSide = prompt(`Please enter a number between 2 and 100. 
+  How many squares do you want on each side? `);
     } 
 
     squaresPerSide = Math.abs(Math.round(squaresPerSide));
