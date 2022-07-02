@@ -1,3 +1,6 @@
+TODO: 
+merge refactored branch into main branch
+
 # Etch-a-Sketch
 
 Created for The Odin Project's Web Development 101's Project: Etch-a-Sketch (https://www.theodinproject.com/courses/web-development-101/lessons/etch-a-sketch-project?ref=lnav)
