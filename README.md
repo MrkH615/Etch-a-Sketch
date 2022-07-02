@@ -1,5 +1,5 @@
 TODO: 
-merge refactored branch into main branch
+use modal or dialogue box instead of popup/prompt for asking user for number of squares
 
 # Etch-a-Sketch
 

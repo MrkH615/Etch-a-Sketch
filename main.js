@@ -38,10 +38,6 @@ function clearDrawingArea(){
   drawingBox.style.backgroundColor = '#ebfeff';
 }
 
-//makeDrawingArea(gridArea=256);
-
-//let lightnessCounter = new Array(gridArea).fill(90);
-
 function makeLightnessCounter(gridArea) {
    return new Array(gridArea).fill(90);
 }
@@ -69,14 +65,7 @@ function chooseRandomColor(squareDivNumber, lightnessCounter) {
 drawFirst();
 
 function newDraw(){
-
-    /*let prevSquaresPerSide = squaresPerSide;
-    console.log(prevSquaresPerSide); /* click { target: button#newSquares, 
-    buttons: 0, clientX: 671, clientY: 89, layerX: 671, layerY: 105 } */
-    /*squaresPerSide = prompt(`How many squares do you want on each side? \n
-    Currently set at ${prevSquaresPerSide} on each side.  `);*/
-    // in prompt "Currently set at [object MouseEvent] on each side."
-
+  
     let squaresPerSide = prompt(`How many squares do you want on each side? 
   Please enter an integer between 2 and 100.`);
     while (Number.isNaN(Number(squaresPerSide)) || squaresPerSide < 2 
@@ -98,17 +87,8 @@ function newDraw(){
 
 
 function getNewSquares(squaresPerSide) {
-  /*const newSquares = document.querySelector("#newSquares");
-  newSquares.addEventListener('click', () => {
-    squaresPerSide = prompt(`How many squares do you want on each side? \nCurrently set at ${squaresPerSide} on each side.  `);
-    while (Number.isNaN(Number(squaresPerSide))) {
-      squaresPerSide = prompt(`Please enter a number. \nHow many squares do you want on each side? `);
-    }
-    clearDrawingArea();
-  }); */
-     
+
     squaresPerSide = Math.abs(Math.round(squaresPerSide)); 
-    //clearDrawingArea();
     return squaresPerSide;
 }
 
