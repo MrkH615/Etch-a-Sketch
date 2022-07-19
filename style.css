@@ -59,7 +59,7 @@ h1 {
 }
 #drawing-box {
    /* margin: auto;*/
-   margin-top: 1rem;
+    margin-top: 1rem;
     border-style: inset;
     border-width: .625rem;
     width: 47rem;
@@ -68,7 +68,3 @@ h1 {
    
 }
 
-.coloredBox {
-    background-color: blueviolet;
-    border-block-style: none;
-}
