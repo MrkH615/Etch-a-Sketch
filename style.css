@@ -1,12 +1,6 @@
 
 body {
     background-color: #ebfeff;
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    overflow: hidden;
-    height: 90vh; */
 }
 
 .container {
@@ -27,16 +21,7 @@ button {
     font-size: 1rem;
 }
 
-/*
-#buttonContainer {
-  margin: auto;
-  width: 15%;
-}
-*/
-
 h1 {
-    /*margin: auto;
-    width:  25%;*/
     margin-top: 1rem;
     font-size: 2rem;
 }
@@ -44,11 +29,8 @@ h1 {
 
 #instructions {
     padding: .5rem;
-    /*margin:  auto;
-    width: 35%;*/
     font-size: 1.5rem;
 }
-
 
 .squareDiv {
     width: auto;
@@ -58,13 +40,11 @@ h1 {
     
 }
 #drawing-box {
-   /* margin: auto;*/
     margin-top: 1rem;
     border-style: inset;
     border-width: .625rem;
     width: 47rem;
     height: 40.625rem;
     display: grid;
-   
 }
 

@@ -1,5 +1,4 @@
-TODO: 
-use modal or dialogue box instead of popup/prompt for asking user for number of squares
+
 
 # Etch-a-Sketch
 
@@ -13,5 +12,6 @@ The assignment called for using JavaScript to create a grid of a given number of
 
 This project really reinforced for me the importance of trying out functions, methods, etc in a fiddle before integrating them into my code.  Another thing I learned was that describing what I was trying to do with my code and what was happening with my code in plain English helped me to understand what I was doing and what I needed to do next.  Finally, working on this project reinforced the fact that after taking a break, I was often able to solve a problem that had felt unsoluable before the break.
 
-
+# Next steps / TODO: 
+- use modal or dialogue box instead of popup/prompt for asking user for number of squares
 
